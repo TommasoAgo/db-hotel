@@ -33,11 +33,10 @@ FROM `pagamenti`
 WHERE `status` = "accepted"
 
 
-7. Seleziona gli ospiti riconosciuti con patente e nati nel 1975
+7. Seleziona gli ospiti riconosciuti con patente e nati nel 1975 
 SELECT * 
 FROM `ospiti` 
-WHERE `document_type` = "Driver License" AND `date_of_birth` BETWEEN "1974-12-31 00:00:00" and "1975-12-31 00:00:00"
-
+WHERE `document_type` = "Driver License" AND date(`date_of_birth`) BETWEEN date("1975-01-01") AND date("1975-12-31")
 
 8. Quanti paganti sono anche ospiti?
 SELECT * 
